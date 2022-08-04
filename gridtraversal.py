@@ -28,7 +28,7 @@ class Solution:
     def uniquePaths(self,m, n):
         return int(self.factorial(m-1+n-1)/(self.factorial(m-1)*self.factorial(n-1)))
     def factorial(self, m):
-        if(m == 1):
+        if(m <= 1):
             return 1
         return m*self.factorial(m-1)
 
