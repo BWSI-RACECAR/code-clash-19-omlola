@@ -26,18 +26,11 @@ Input: m=3; n=7; Output = 28
 
 class Solution:
     def uniquePaths(self,m, n):
-        if m == n:
-            return 2 ** (m-1)
-        if m > n:
-            a = 0
-            for i in range(n+1):
-                a+=i
-            return a+self.uniquePaths(m-1, n)
-        else:
-            a=0
-            for i in range(m+1):
-                a+=i
-            return a+self.uniquePaths(m, n-1)
+        return int(self.factorial(m-1+n-1)/(self.factorial(m-1)*self.factorial(n-1)))
+    def factorial(self, m):
+        if(m == 1):
+            return 1
+        return m*self.factorial(m-1)
 
 def main():
     num1 = int(input())
